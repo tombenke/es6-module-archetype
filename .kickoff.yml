@@ -1,0 +1,70 @@
+# This is a configuration file for the kickoff utility
+description: |
+    This is a project archetype for simple es6 modules
+    New projects can be generated from this archetype by the
+    [kickoff](https://github.com/tombenke/kickoff) utility.
+
+welcome: >
+
+    You are generating a JavaScript project, which is a simple es6 module.
+
+postscript: >
+
+    Next steps:
+
+     - Install the npm modules required by the newly generated application:
+
+        cd <dest-folder>
+        npm install
+
+     - Run the tests
+
+        npm test
+
+     - Create a GitHub repository and push the content of the project
+
+     - Activate the repository on travis-ci, to run automatic tests
+
+     - Activate the repository on coveralls.io, in order to get coverage value into the badge
+
+     - Change the account names in links to coveralls and travis at the bottom of the README.md file
+       in case they differ from the github account name of the author
+
+questions:
+    - 
+        type: input
+        name: package_name
+        message: The name of the module
+        default: es6-module-x
+
+    -
+        type: input
+        name: package_description
+        message: The short description of the plugin
+        default: This is an es6 module
+
+    -
+        type: input
+        name: author_full_name
+        message: The full name of the author of the application
+        default: Anonymous
+
+    -
+        type: input
+        name: author_email
+        message: The email address of the author
+        default: anonymous@some-domain.com
+
+    -
+        type: input
+        name: author_github_account
+        message: The github account (username) of the author
+        default: anonymous
+
+converters:
+    handlebars:
+        - lib/index.js
+        - lib/index.spec.js
+        - package.json
+        - README.md
+        - LICENSE.md

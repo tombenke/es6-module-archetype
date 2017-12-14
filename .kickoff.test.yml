@@ -1,0 +1,7 @@
+# Configuration file to generate an es6-module via kickoff
+# kickoff -a test-es6-module.yml -f ~/topics/es6-module-archetype/ -d test-es6-module
+package_name: test-es6-module
+package_description: The implementation of the the test-es6-module
+author_full_name: Test Author
+author_email: testauthor@gmail.com
+author_github_account: testauthor
