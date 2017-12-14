@@ -63,8 +63,8 @@ questions:
 
 converters:
     handlebars:
-        - lib/index.js
-        - lib/index.spec.js
+        - src/index.js
+        - src/index.spec.js
         - package.json
         - README.md
         - LICENSE.md
