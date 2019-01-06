@@ -54,9 +54,6 @@ Gain test coverage report:
 
 ---
 
-This project was generated from the [seneca-plugin-archetype](https://github.com/tombenke/seneca-plugin-archetype)
-by the [kickoff](https://github.com/tombenke/kickoff) utility.
-
 [npm-badge]: https://badge.fury.io/js/es6-module-archetype.svg
 [npm-url]: https://badge.fury.io/js/es6-module-archetype
 [travis-badge]: https://api.travis-ci.org/tombenke/es6-module-archetype.svg
