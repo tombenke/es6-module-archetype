@@ -1,13 +1,14 @@
-# {{package_name}}
+es6-module-archetype
+====================
 
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 [![npm version][npm-badge]][npm-url]
 [![Build Status][travis-badge]][travis-url]
 [![Coveralls][BadgeCoveralls]][Coveralls]
 
-{{package_description}}
+This is a project archetype for simple es6 modules
 
-Read the [API documentation](https://{{author_github_account}}.github.io/{{package_name}}/index.html)
+Read the [API documentation](https://tombenke.github.io/es6-module-archetype/index.html)
 for further details on how to use this library.
 
 
@@ -15,7 +16,7 @@ for further details on how to use this library.
 
 Run the install command:
 
-    npm install --save {{package_name}}
+    npm install --save es6-module-archetype
 
 
 ## Development
@@ -56,10 +57,10 @@ Gain test coverage report:
 This project was generated from the [seneca-plugin-archetype](https://github.com/tombenke/seneca-plugin-archetype)
 by the [kickoff](https://github.com/tombenke/kickoff) utility.
 
-[npm-badge]: https://badge.fury.io/js/{{package_name}}.svg
-[npm-url]: https://badge.fury.io/js/{{package_name}}
-[travis-badge]: https://api.travis-ci.org/{{author_github_account}}/{{package_name}}.svg
-[travis-url]: https://travis-ci.org/{{author_github_account}}/{{package_name}}
-[Coveralls]: https://coveralls.io/github/{{author_github_account}}/{{package_name}}?branch=master
-[BadgeCoveralls]: https://coveralls.io/repos/github/{{author_github_account}}/{{package_name}}/badge.svg?branch=master
+[npm-badge]: https://badge.fury.io/js/es6-module-archetype.svg
+[npm-url]: https://badge.fury.io/js/es6-module-archetype
+[travis-badge]: https://api.travis-ci.org/tombenke/es6-module-archetype.svg
+[travis-url]: https://travis-ci.org/tombenke/es6-module-archetype
+[Coveralls]: https://coveralls.io/github/tombenke/es6-module-archetype?branch=master
+[BadgeCoveralls]: https://coveralls.io/repos/github/tombenke/es6-module-archetype/badge.svg?branch=master
 

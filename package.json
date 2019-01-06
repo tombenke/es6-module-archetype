@@ -1,32 +1,30 @@
 {
-
-  "name": "{{package_name}}",
-  "description": "{{package_description}}",
+  "name": "es6-module-archetype",
+  "description": "",
   "version": "1.0.0",
   "tags": [
     "es6",
     "module",
-    "{{package_name}}"
+    "es6-module-archetype"
   ],
   "author": {
-    "name": "{{author_full_name}}",
-    "email": "{{author_email}}"
+    "name": "Tamás Benke",
+    "email": "tombenke@gmail.com"
   },
   "bugs": {
-    "url": "https://github.com/{{author_github_account}}/{{package_name}}/issues"
+    "url": "https://github.com/tombenke/es6-module-archetype/issues"
   },
   "license": "MIT",
-  "homepage": "https://github.com/{{author_github_account}}/{{package_name}}",
+  "homepage": "https://github.com/tombenke/es6-module-archetype",
   "repository": {
     "type": "git",
-    "url": "http://github.com/{{author_github_account}}/{{package_name}}.git"
+    "url": "http://github.com/tombenke/es6-module-archetype.git"
   },
   "engines": {
     "node": "^6.11.2"
   },
   "main": "dist/index.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "6.16.0",
     "babel-core": "6.17.0",
@@ -39,32 +37,48 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-latest": "6.16.0",
     "babel-register": "6.16.3",
-    "coveralls": "^2.11.15",
+    "coveralls": "^3.0.2",
     "cross-env": "^2.x.x",
     "eslint": "^3.13.1",
-    "expect": "^1.6.0",
+    "expect": "^23.5.0",
+    "husky": "^1.3.1",
     "istanbul": "1.0.0-alpha.2",
     "jsdoc": "^3.5.3",
-    "mocha": "^2.x.x",
+    "mocha": "^5.2.0",
     "mocha-lcov-reporter": "^1.2.0",
     "pre-push": "^0.1.1",
+    "prettier": "^1.15.3",
     "rimraf": "^2.6.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier && npm run lint && npm run docs && npm run test && npm run build"
+    }
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
   },
   "scripts": {
     "dev": "babel src --presets babel-preset-es2015 --out-dir dist --watch",
     "build": "babel src --presets babel-preset-es2015 --out-dir dist",
     "lint": "eslint src/**.js",
+    "prettier": "prettier --single-quote --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
     "test": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register 'src/**/*.spec.js'",
+    "test-single": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register $1",
     "test:watch": "npm test -- --watch",
-    "coverage": "NODE_ENV=test istanbul cover _mocha -- recursive --compilers js:babel-register --timeout 15000 'src/**/*.spec.js'",
+    "coverage": "cross-env NODE_ENV=test istanbul cover _mocha -- recursive --compilers js:babel-register --timeout 15000 'src/**/*.spec.js'",
     "coveralls": "NODE_ENV=test istanbul cover _mocha --report lcovonly -- recursive --compilers js:babel-register --timeout 15000 'src/**/*.spec.js' -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "docs": "rm -fr ./docs/* && jsdoc -c ./.jsdoc.json",
-    "prepublish": "npm run lint && npm run test && npm run build && npm run docs",
-    "all": "npm run lint && npm run coverage && npm run build && npm run docs"
+    "prepublishOnly": "npm run build && npm run docs",
+    "all": "npm run prettier && npm run lint && npm run coverage && npm run build && npm run docs"
   },
   "pre-push": [
     "lint",
     "test",
-    "prepublish"
+    "prepublishOnly"
   ]
 }

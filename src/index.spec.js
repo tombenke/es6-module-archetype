@@ -21,10 +21,9 @@ after(function(done) {
     destCleanup(done)
 })
 
-
-describe('{{package_name}}', () => {
-
+describe('es6-module-archetype', () => {
     it('#testMe', () => {
-        expect(testMe('Hello')).toBeA('string').toEqual('Hello testMe!')
+        const result = testMe('Hello')
+        expect(result).toEqual('Hello testMe!')
     })
 })

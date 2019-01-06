@@ -63,8 +63,4 @@ questions:
 
 converters:
     handlebars:
-        - src/index.js
-        - src/index.spec.js
-        - package.json
-        - README.md
-        - LICENSE.md
+        - .kickoff.sed
